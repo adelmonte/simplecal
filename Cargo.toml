@@ -1,0 +1,22 @@
+[package]
+name = "simplecal"
+version = "0.1.0"
+edition = "2024"
+description = "A small, themeable popup calendar for Wayland bars (gsimplecal replacement)"
+license = "GPL-3.0-or-later"
+repository = "https://github.com/adelmonte/simplecal"
+
+[dependencies]
+chrono = { version = "0.4.45", default-features = false, features = ["clock", "std"] }
+eframe = { version = "0.37.0", default-features = false, features = ["glow", "wayland", "x11", "default_fonts"] }
+fontdb = "0.24.0"
+libc = "0.2.191"
+serde = { version = "1.0.229", features = ["derive"] }
+toml = "1.2.2"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = true

@@ -1,0 +1,47 @@
+# simplecal configuration
+# Copy to ~/.config/simplecal/config.toml (or $XDG_CONFIG_HOME/simplecal/config.toml).
+# Every key is optional; anything left out uses the default shown here.
+
+# Wayland app-id, for compositor window rules
+app_id = "simplecal"
+# Close the calendar when it loses keyboard focus
+close_on_unfocus = true
+# "sunday" or "monday"
+week_start = "sunday"
+show_week_numbers = false
+
+# Font family as reported by `fc-list : family`; falls back to egui's built-in font
+font_family = "JetBrainsMono Nerd Font"
+font_weight = 300
+bold_weight = 700
+font_size = 14.0
+header_font_size = 14.0
+weekday_font_size = 14.0
+
+# Sizes are in logical pixels; the window size is derived from them
+padding = 5.0
+cell_width = 40.0
+cell_height = 32.0
+header_height = 26.0
+header_gap = 4.0
+today_radius = 0.0
+hover_radius = 3.0
+
+# Colors: #rgb, #rgba, #rrggbb or #rrggbbaa
+[colors]
+background = "#3b4252"
+header_background = "#3b4252"
+header_border = "#2e3440"
+header_text = "#e5e9f0"
+arrow = "#a3abb9"
+arrow_hover = "#eceff4"
+weekday_background = "#5e81ac"
+weekday_text = "#eceff4"
+text = "#eceff4"
+weekend_text = "#eceff4"
+other_month_text = "#7b8394"
+week_number_text = "#81a1c1"
+today_background = "#5e81ac"
+today_text = "#ffffff"
+selected_border = "#81a1c1"
+hover = "#ffffff1a"

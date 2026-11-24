@@ -1,0 +1,40 @@
+# Maintainer: adelmonte
+pkgname=simplecal
+pkgver=0.1.0
+pkgrel=1
+pkgdesc='Small, themeable popup calendar for Wayland bars (gsimplecal replacement, no GTK)'
+arch=('x86_64')
+url='https://github.com/adelmonte/simplecal'
+license=('GPL-3.0-or-later')
+depends=('glibc' 'gcc-libs' 'wayland' 'libxkbcommon' 'libglvnd')
+optdepends=('ttf-jetbrains-mono-nerd: default font')
+makedepends=('cargo')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('SKIP')
+options=('!lto')
+
+prepare() {
+  cd "$pkgname-$pkgver"
+  export RUSTUP_TOOLCHAIN=stable
+  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  export RUSTUP_TOOLCHAIN=stable
+  export CARGO_TARGET_DIR=target
+  cargo build --frozen --release
+}
+
+check() {
+  cd "$pkgname-$pkgver"
+  export RUSTUP_TOOLCHAIN=stable
+  cargo test --frozen --release
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  install -Dm755 target/${CARGO_BUILD_TARGET:-.}/release/simplecal "$pkgdir/usr/bin/simplecal"
+  install -Dm644 config.example.toml "$pkgdir/usr/share/doc/$pkgname/config.example.toml"
+  install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
+}
