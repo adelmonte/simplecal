@@ -10,7 +10,7 @@ depends=('glibc' 'gcc-libs' 'wayland' 'libxkbcommon' 'libglvnd')
 optdepends=('ttf-jetbrains-mono-nerd: default font')
 makedepends=('cargo')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=('SKIP')
+sha256sums=('26cd06152530a51bd2637f8a725f7db2d4f32eaca1a03afcb357ad3ad1efcba2')
 options=('!lto')
 
 prepare() {
