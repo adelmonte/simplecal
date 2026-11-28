@@ -1,6 +1,6 @@
 # Maintainer: adelmonte
 pkgname=simplecal
-pkgver=0.1.0
+pkgver=0.1.1
 pkgrel=1
 pkgdesc='Small, themeable popup calendar for Wayland bars (gsimplecal replacement, no GTK)'
 arch=('x86_64')
@@ -10,7 +10,7 @@ depends=('glibc' 'gcc-libs' 'wayland' 'libxkbcommon' 'libglvnd')
 optdepends=('ttf-jetbrains-mono-nerd: default font')
 makedepends=('cargo')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=('26cd06152530a51bd2637f8a725f7db2d4f32eaca1a03afcb357ad3ad1efcba2')
+sha256sums=('5634a161dbe2d13ecfbb9eaad1434321b733b7cabd607a3688b9305017cc93ef')
 options=('!lto')
 
 prepare() {
