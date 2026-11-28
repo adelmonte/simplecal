@@ -8,7 +8,7 @@ repository = "https://github.com/adelmonte/simplecal"
 
 [dependencies]
 chrono = { version = "0.4.45", default-features = false, features = ["clock", "std"] }
-eframe = { version = "0.37.0", default-features = false, features = ["glow", "wayland", "x11", "default_fonts"] }
+eframe = { version = "0.37.0", default-features = false, features = ["glow", "wayland", "default_fonts"] }
 fontdb = "0.24.0"
 libc = "0.2.191"
 serde = { version = "1.0.229", features = ["derive"] }
