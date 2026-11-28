@@ -1,6 +1,6 @@
 [package]
 name = "simplecal"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 description = "A small, themeable popup calendar for Wayland bars (gsimplecal replacement)"
 license = "GPL-3.0-or-later"
